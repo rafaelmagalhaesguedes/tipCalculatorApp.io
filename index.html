@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,53 +16,63 @@
 </head>
 <body>
   <main>
-    <section class="form-caculator">
+    <section>
       
-      <div class="box">
-        <i class="icon-money"></i>
-        <input type="number" placeholder="0">  
+      <div class="painel-1">
+        
+        <div class="box">
+          <label class="label-bill" for="bill">Bill</label>
+        </div>
+
+        <div class="box">
+          <input class="input" type="text" id="bill" placeholder="0">  
+        </div>
+
+        <div class="box">
+          <label>Select Tip %</label>  
+        </div>
+        
+        <div class="box-select">
+          <button class="btn-select">5%</button>
+          <button class="btn-select">10%</button>
+          <button class="btn-select">20%</button>
+          <button class="btn-select">30%</button>
+          <button class="btn-select">40%</button>
+          <button class="custom">Custom</button>
+        </div>
+
+        <div class="box">
+          <label class="label-bill">Number of People</label>  
+        </div>
+
+        <div class="box">
+          <input class="input" type="text" placeholder="0">
+        </div>
+
       </div>
 
-      <div class="box">
-        <h2>Select Tip %</h2>
-        <button>5%</button>
-        <button>10%</button>
-        <button>20%</button>
-        <button>30%</button>
-        <button>40%</button>
-        <button>Custom</button>
+      <div class="painel-2">
+        <div class="box font align">
+          <span class="display-block">Tip Amount<br>/ person</span>
+          <span>R$ 0.00</span>  
+        </div>
+  
+        <div class="box font align">
+          <span class="display-block">Total<br>/ person</span>
+          <span>R$ 0.00</span>  
+        </div>
+       
+        <div class="box font align">
+          <button  class="button"  type="reset">RESET</button>  
+        </div>
       </div>
 
-      <div class="box">
-        <label>Number of People</label>
-        <i class="icon-people"></i>
-        <input type="number">
-      </div>
-
-    </section>
-
-    <section class="display-data"> 
-      <div class="box">
-        <span>Tip Amount</span>
-        <span>/ person</span>  
-        <span>R$ 0.00</span>
-      </div>
-
-      <div class="box">
-        <span>Total</span>
-        <span>/ person</span>  
-        <span>R$ 0.00</span>  
-      </div>
-     
-      <div class="box">
-        <button type="reset">RESET</button>  
-      </div>
     </section>
   </main>
   
-  <div class="attribution">
+<!--   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Rafael Guedes</a>.
-  </div>
+  </div> -->
 </body>
 </html>
