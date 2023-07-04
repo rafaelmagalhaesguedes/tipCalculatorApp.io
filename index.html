@@ -33,12 +33,12 @@
         </div>
         
         <div class="box-select">
-          <button class="btn-select">5%</button>
-          <button class="btn-select">10%</button>
-          <button class="btn-select">20%</button>
-          <button class="btn-select">30%</button>
-          <button class="btn-select">40%</button>
-          <button class="custom">Custom</button>
+          <button class="tip" value="5">5%</button>
+          <button class="tip" value="10">10%</button>
+          <button class="tip" value="20">20%</button>
+          <button class="tip" value="30">30%</button>
+          <button class="tip" value="40">40%</button>
+          <button class="tip custom" value="opcao6">Custom</button>
         </div>
 
         <div class="box">
@@ -46,7 +46,7 @@
         </div>
 
         <div class="box">
-          <input class="input" type="text" placeholder="0">
+          <input class="input" id="persons" type="text" placeholder="0">
         </div>
 
       </div>
@@ -54,22 +54,23 @@
       <div class="painel-2">
         <div class="box font align">
           <span class="display-block">Tip Amount<br>/ person</span>
-          <span>R$ 0.00</span>  
+          <span id="total-bill">R$ 0.00</span>  
         </div>
   
         <div class="box font align">
           <span class="display-block">Total<br>/ person</span>
-          <span>R$ 0.00</span>  
+          <span id="total-person">R$ 0.00</span>  
         </div>
        
         <div class="box font align">
-          <button  class="button"  type="reset">RESET</button>  
+          <button class="button" id="reset">RESET</button>  
         </div>
       </div>
 
+      <div id="result"></div>
     </section>
   </main>
-  
+  <script src="./script.js"></script>
 <!--   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Rafael Guedes</a>.
