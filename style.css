@@ -51,7 +51,7 @@ section {
   margin-top: 100px;
 }
 
-.btn-select {
+.tip {
   background-color: rgb(9,84,88);
   color: white;
   font-size: 0.9em;
@@ -69,8 +69,9 @@ section {
   width: 30%;
   color: #969ca2;
   border: none;
+  padding: 5px;
   border-radius: 5px;
-  margin: 3px;
+  font-size: 0.9em;
 }
 
 .painel-1 {
@@ -78,6 +79,7 @@ section {
     flex-flow: column nowrap;
     width: 50%;
     color: #5c666f;
+    margin-right: 20px;
 }
 
 .box {
@@ -101,7 +103,6 @@ section {
     display: flex;
     width: 250px;
     flex-flow: column nowrap;
-    border: 1px solid #000;
     border-radius: 10px;
     background-color:rgb(9,84,88);
     padding: 10px;
