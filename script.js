@@ -58,7 +58,7 @@ function main(tip = 0) {
     const totalBill = calculateBill(bill, totalTip);
     const perPerson = calculatePerPerson(totalBill, persons);
     // Output data
-    displayTotalBill.textContent = 'R$ ' + totalBill.toFixed(2);
+    displayTotalBill.textContent = 'R$ ' + totalTip.toFixed(2);
     displayTotalPerson.textContent = 'R$ ' + perPerson.toFixed(2);
   } catch (error) {
     // Handle errors

@@ -10,13 +10,22 @@ body {
     font-weight: 700;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  padding: 40px;
+}
+
 main {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
 }
 
 section { 
@@ -24,7 +33,7 @@ section {
   display: flex;
   flex-flow: row nowrap;
   border-radius: 15px;
-  padding: 30px;
+  padding: 20px;
   background-color: white;
   justify-content: space-evenly;
 }
@@ -55,7 +64,7 @@ section {
   width: 100%;
   border: none;
   border-radius: 10px;
-  margin-top: 170px;
+  margin-top: 100px;
 }
 
 .tip {
@@ -64,7 +73,7 @@ section {
   font-size: 0.9em;
   font-weight: 600;
   width: 30%;
-  padding: 10px 20px;
+  padding: 5px 20px;
   margin: 3px;
   border: none;
   border-radius: 5px;
@@ -87,7 +96,7 @@ section {
 .painel-1 {
     display: flex;
     flex-flow: column nowrap;
-    width: 50%;
+    width: 45%;
     color: #5c666f;
     margin-right: 20px;
 }
@@ -111,21 +120,21 @@ section {
 
 .painel-2 {
     display: flex;
-    width: 50%;
+    width: 55%;
     flex-flow: column nowrap;
     border-radius: 10px;
     background-color:rgb(9,84,88);
-    padding: 10px;
+    padding: 40px 20px 20px 20px;
 }
 
 .displayData {
   color: rgb(40,193,171);
-  font-size: 34px;
+  font-size: 40px;
 }
 
 .label {
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .align {
