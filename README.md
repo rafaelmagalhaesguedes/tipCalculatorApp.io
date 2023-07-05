@@ -6,7 +6,7 @@
 ## Tecnologias 
 - HTML5
 - CSS3
-- JavaScrit
+- JavaScript
 
 ![Design preview for the Tip calculator app coding challenge](./design/desktop-preview.jpg)
 
