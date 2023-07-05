@@ -1,7 +1,12 @@
-# Frontend Mentor - Tip calculator app
+# Tip calculator app
 
 # Link do projeto
 🔗 https://rafaelmagalhaesguedes.github.io/calculatorApp.io/
+
+## Tecnologias 
+- HTML5
+- CSS3
+- JavaScrit
 
 ![Design preview for the Tip calculator app coding challenge](./design/desktop-preview.jpg)
 
