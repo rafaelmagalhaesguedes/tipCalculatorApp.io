@@ -190,4 +190,14 @@ section {
     width: 100%;
     margin-bottom: 20px;
   }
+
+  .tip {
+    width: 40%;
+    flex-grow: 1;
+    margin: 5px;
+  }
+
+  .button-reset {
+    margin-top: 50px;
+  }
 }
