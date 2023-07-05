@@ -145,3 +145,34 @@ section {
   background-color: rgb(40,193,171);
   color: #353b40;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    font-family: 'Space Mono';
+    font-weight: 700;
+  }
+  main {
+    margin: 0;
+    padding: 0;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .painel-1 {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .painel-2 {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
