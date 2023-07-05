@@ -29,8 +29,12 @@ const selectTip = () => {
   const tipButtons = document.querySelectorAll('.tip');
   tipButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const tipValue = parseFloat(button.value);
+      // Remove selected class from all buttons
+      tipButtons.forEach(btn => btn.classList.remove('selected'));
+      // Add selected class to the clicked button
+      button.classList.add('selected');
 
+      const tipValue = parseFloat(button.value);
       // Call main function after selecting tip
       main(tipValue);
     });
@@ -81,4 +85,7 @@ buttonReset.addEventListener('click', () => {
   document.getElementById('persons').value ='';
   document.getElementById('total-bill').textContent = 'R$ 0.00';
   document.getElementById('total-person').textContent = 'R$ 0.00';
+  // Remove selected class from all buttons
+  const tipButtons = document.querySelectorAll('.tip');
+  tipButtons.forEach(button => button.classList.remove('selected'));
 });
