@@ -6,6 +6,7 @@
 
 body {
     background-color: rgb(196, 224, 252);
+    font-family: 'Space Mono';
 }
 
 main {
@@ -18,7 +19,7 @@ main {
 }
 
 section { 
-  width: 600px;
+  width: 750px;
   display: flex;
   flex-flow: row nowrap;
   border-radius: 15px;
@@ -40,7 +41,7 @@ section {
   border: none;
 }
 
-.button {
+.button-reset {
   background-color: rgb(40,193,171);
   padding: 10px 20px;
   color: darkslategrey;
@@ -101,11 +102,16 @@ section {
 
 .painel-2 {
     display: flex;
-    width: 250px;
+    width: 50%;
     flex-flow: column nowrap;
     border-radius: 10px;
     background-color:rgb(9,84,88);
     padding: 10px;
+}
+
+.displayData {
+  color: rgb(40,193,171);
+  font-size: 24px;
 }
 
 .align {
