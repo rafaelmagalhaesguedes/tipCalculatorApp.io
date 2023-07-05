@@ -54,8 +54,8 @@ function main(tip = 0) {
     const totalBill = calculateBill(bill, totalTip);
     const perPerson = calculatePerPerson(totalBill, persons);
     // Output data
-    displayTotalBill.textContent = 'R$' + totalBill.toFixed(2);
-    displayTotalPerson.textContent = 'R$' + perPerson.toFixed(2);
+    displayTotalBill.textContent = 'R$ ' + totalBill.toFixed(2);
+    displayTotalPerson.textContent = 'R$ ' + perPerson.toFixed(2);
   } catch (error) {
     // Handle errors
     console.error(error);
@@ -72,4 +72,13 @@ inputPersons.addEventListener('input', () => {
   if (inputPersons.value) {
     main();
   }
+});
+
+// Reset data inputs
+const buttonReset = document.getElementById('reset');
+buttonReset.addEventListener('click', () => {
+  document.getElementById('bill').value = '';
+  document.getElementById('persons').value ='';
+  document.getElementById('total-bill').textContent = 'R$ 0.00';
+  document.getElementById('total-person').textContent = 'R$ 0.00';
 });
