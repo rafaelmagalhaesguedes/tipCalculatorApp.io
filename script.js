@@ -1,39 +1,59 @@
+//
+//  Trybe Programming School
+//
+//  Project: Calculate Tip
+//  
+//  Dev: Rafael Guedes
+//
+
 // Calculate
 const calculateTip = (bill, tip) => (bill * tip) / 100;
 const calculateBill = (bill, totalTip) => bill + totalTip;
 const calculatePerPerson = (totalBill, persons) => totalBill / persons;
 
-// Validade input data
+// Validate input data
 const validateData = (bill, tip, persons) => {
-  if (!bill) {
-    throw new Error('Informe o valor da conta');
+  if (!bill || isNaN(bill)) {
+    throw new Error('Valor inválido, informe um valor númerico.');
   }
-  if (typeof bill !== 'number' || typeof tip !== 'number' || typeof persons !== 'number') {
-    throw new Error('Informe apenas números');
+  if (isNaN(tip) || isNaN(persons)) {
+    throw new Error('Valor inválido, informe apenas números');
   }
-  if (persons <= 0 || bill < 0) {
+  if (persons <= 0) {
     throw new Error('O número de pessoas deve ser maior que 0');
   }
 };
 
-// Main
-function calculateTotalBill() {
+// Select tip value
+const selectTip = () => {
+  const tipButtons = document.querySelectorAll('.tip');
+  tipButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const tipValue = parseFloat(button.value);
+
+      // Call main function after selecting tip
+      main(tipValue);
+    });
+  });
+}
+selectTip();
+
+// Main function
+function main(tip = 0) {
+  // Data input
   const bill = parseFloat(document.getElementById('bill').value);
-  const tip = parseFloat(document.querySelector('.tip').value);
   const persons = parseInt(document.getElementById('persons').value);
   const displayTotalBill = document.getElementById('total-bill');
   const displayTotalPerson = document.getElementById('total-person');
-  
+  // Data Processing
   try {
     // Validate input data
     validateData(bill, tip, persons);
-    
     // Calculate total bill
     const totalTip = calculateTip(bill, tip);
     const totalBill = calculateBill(bill, totalTip);
     const perPerson = calculatePerPerson(totalBill, persons);
-    
-    // Update the display
+    // Output data
     displayTotalBill.textContent = 'R$' + totalBill.toFixed(2);
     displayTotalPerson.textContent = 'R$' + perPerson.toFixed(2);
   } catch (error) {
@@ -47,5 +67,9 @@ function calculateTotalBill() {
 
 // Get input persons to start operation
 const inputPersons = document.getElementById('persons');
-// Start calc total bill
-inputPersons.addEventListener('input', calculateTotalBill);
+// Start calc total bill when the number of persons is provided
+inputPersons.addEventListener('input', () => {
+  if (inputPersons.value) {
+    main();
+  }
+});
