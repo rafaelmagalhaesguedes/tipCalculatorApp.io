@@ -1,4 +1,4 @@
-# Tip Calculator App
+# Tip Calculator Ap
 
 O aplicativo é uma ferramenta simples que ajuda a calcular o valor da gorjeta e o valor total da conta por pessoa ao dividir a conta entre várias pessoas. O aplicativo é escrito em HTML, CSS e JavaScript.
 
