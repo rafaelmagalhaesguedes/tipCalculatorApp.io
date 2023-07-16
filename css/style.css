@@ -53,11 +53,13 @@ section {
   margin-top: -13px;
   background-color: #d7eded;
   border: none;
+  border-radius: 5px;
   direction: rtl; /* Define a direção do texto como da direita para a esquerda */
   text-align: right; /* Alinha o texto à direita */
   font-weight: 700;
   font-size: 24px;
   font-family: 'Space Mono';
+  caret-color: rgb(1, 24, 1);
 }
 
 .button-reset {

@@ -7,11 +7,11 @@
 //
 
 // Validate input data
-const validateData = (bill, tip, persons) => {
+const validateData = (bill, persons) => {
   if (!bill || isNaN(bill)) {
     throw new Error('Valor inválido, informe um valor númerico.');
   }
-  if (isNaN(tip) || isNaN(persons)) {
+  if (isNaN(persons)) {
     throw new Error('Valor inválido, informe apenas números');
   }
   if (persons <= 0) {
@@ -49,7 +49,7 @@ function main(tip = 0) {
   // Data Processing
   try {
     // Validate input data
-    validateData(bill, tip, persons);
+    validateData(bill, persons)
     // Calculate total bill
     const totalTip = calculateTip(bill, tip);
     const totalBill = calculateBill(bill, totalTip);
@@ -63,6 +63,39 @@ function main(tip = 0) {
   }
 }
 
+// Selecione o botão "Custom"
+const customButton = document.querySelector('.tip.custom');
+
+// Manipulador de eventos botão "Custom"
+customButton.addEventListener('click', function() {
+  // Obtenha o valor personalizado do campo de entrada
+  const customValue = parseInt(prompt('Enter custom tip percentage:'));
+  
+  // Verifique se o valor personalizado é válido
+  if (customValue && customValue > 0) {
+    // Atualize o valor do botão "Custom" para exibir o valor personalizado
+    customButton.textContent = customValue + '%';
+    
+    // Calcule a gorjeta com base no valor personalizado
+    const billInput = document.getElementById('bill');
+    const billAmount = parseFloat(billInput.value);
+    const tipPercentage = customValue / 100;
+    const tipAmount = billAmount * tipPercentage;
+    
+    // Atualize a exibição do valor da gorjeta
+    const totalBillDisplay = document.getElementById('total-bill');
+    totalBillDisplay.textContent = 'R$ ' + tipAmount.toFixed(2);
+    
+    // Atualize a exibição do valor total por pessoa
+    const personsInput = document.getElementById('persons');
+    const numberOfPersons = parseInt(personsInput.value);
+    const totalPerPerson = (billAmount + tipAmount) / numberOfPersons;
+    const totalPersonDisplay = document.getElementById('total-person');
+    totalPersonDisplay.textContent = 'R$ ' + totalPerPerson.toFixed(2);
+  }
+});
+
+
 // Get input persons to start operation
 const inputPersons = document.getElementById('persons');
 // Start calc total bill when the number of persons is provided
@@ -74,4 +107,12 @@ inputPersons.addEventListener('input', () => {
 
 // Reset data inputs
 const buttonReset = document.getElementById('reset');
-buttonReset.addEventListener('click', () => location.reload());
+const tipButtons = document.querySelectorAll('.tip');
+buttonReset.addEventListener('click', () => {
+  customButton.textContent = 'Custom';
+  tipButtons.forEach(btn => btn.classList.remove('selected'));
+  document.getElementById('bill').value = '';
+  document.getElementById('persons').value = '';
+  document.getElementById('total-bill').innerText = 'R$ 0.00';
+  document.getElementById('total-person').innerText = 'R$ 0.00';
+});
