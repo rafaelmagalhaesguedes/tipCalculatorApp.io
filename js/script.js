@@ -6,11 +6,6 @@
 //  Dev: Rafael Guedes
 //
 
-// Calculate
-const calculateTip = (bill, tip) => (bill * tip) / 100;
-const calculateBill = (bill, totalTip) => bill + totalTip;
-const calculatePerPerson = (totalBill, persons) => totalBill / persons;
-
 // Validate input data
 const validateData = (bill, tip, persons) => {
   if (!bill || isNaN(bill)) {
@@ -29,18 +24,19 @@ const selectTip = () => {
   const tipButtons = document.querySelectorAll('.tip');
   tipButtons.forEach(button => {
     button.addEventListener('click', () => {
-      // Remove selected class from all buttons
       tipButtons.forEach(btn => btn.classList.remove('selected'));
-      // Add selected class to the clicked button
       button.classList.add('selected');
-
       const tipValue = parseFloat(button.value);
-      // Call main function after selecting tip
       main(tipValue);
     });
   });
 }
 selectTip();
+
+// Calculate
+const calculateTip = (bill, tip) => (bill * tip) / 100;
+const calculateBill = (bill, totalTip) => bill + totalTip;
+const calculatePerPerson = (totalBill, persons) => totalBill / persons;
 
 // Main function
 function main(tip = 0) {
@@ -49,6 +45,7 @@ function main(tip = 0) {
   const persons = parseInt(document.getElementById('persons').value);
   const displayTotalBill = document.getElementById('total-bill');
   const displayTotalPerson = document.getElementById('total-person');
+  
   // Data Processing
   try {
     // Validate input data
@@ -61,11 +58,8 @@ function main(tip = 0) {
     displayTotalBill.textContent = 'R$ ' + totalTip.toFixed(2);
     displayTotalPerson.textContent = 'R$ ' + perPerson.toFixed(2);
   } catch (error) {
-    // Handle errors
-    console.error(error);
-    displayTotalBill.textContent = '';
-    displayTotalPerson.textContent = '';
-    return error.message;
+    alert(error.message);
+    location.reload();
   }
 }
 
@@ -80,12 +74,4 @@ inputPersons.addEventListener('input', () => {
 
 // Reset data inputs
 const buttonReset = document.getElementById('reset');
-buttonReset.addEventListener('click', () => {
-  document.getElementById('bill').value = '';
-  document.getElementById('persons').value ='';
-  document.getElementById('total-bill').textContent = 'R$ 0.00';
-  document.getElementById('total-person').textContent = 'R$ 0.00';
-  // Remove selected class from all buttons
-  const tipButtons = document.querySelectorAll('.tip');
-  tipButtons.forEach(button => button.classList.remove('selected'));
-});
+buttonReset.addEventListener('click', () => location.reload());
