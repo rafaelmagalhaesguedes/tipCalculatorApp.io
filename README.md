@@ -4,7 +4,7 @@ O aplicativo é uma ferramenta simples que ajuda a calcular o valor da gorjeta e
 
 ## Live link
 
-➡️ https://rafaelmagalhaesguedes.github.io/calculatorApp.io/
+➡️ https://rafaelmagalhaesguedes.github.io/tipCalculatorApp.io/
 
 ## Uso
 
